@@ -1,4 +1,4 @@
-import { BuildingLibraryIcon, HeartIcon, HomeIcon, MagnifyingGlassIcon, PlusCircleIcon } from '@heroicons/react/24/outline'
+import { BuildingLibraryIcon, HomeIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { useStateProvider } from '../utils/StateProvider'
 import { useEffect, useState } from 'react'
 
@@ -30,7 +30,7 @@ const Sidebar = ({ view, setView, setGlobalPlaylistId }) => {
                     <SpotifySVG />
                 </div>
 
-                <button className='flex items-center space-x-2 hover:text-white'>
+                <button onClick={() => setView("home")} className='flex items-center space-x-2 hover:text-white'>
                     <HomeIcon className='h-5 w-5' />
                     <p>Home</p>
                 </button>
@@ -43,14 +43,9 @@ const Sidebar = ({ view, setView, setGlobalPlaylistId }) => {
                     <p>Your Library</p>
                 </button>
                 <hr className='border-black' />
-                <button className='flex items-center space-x-2 hover:text-white'>
-                    <PlusCircleIcon className='h-5 w-5' />
-                    <p>Create Playlist</p>
-                </button>
-                <button className='flex items-center space-x-2 hover:text-white'>
-                    <HeartIcon className='h-5 w-5' />
-                    <p>Liked Songs</p>
-                </button>
+                <div className='flex items-center space-x-2 hover:text-white'>
+                    <p> </p>
+                </div>
                 <hr className='border-neutral-900' />
                 {
                     playlists?.map((playlist) => {

@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import Sidebar from './Sidebar';
 import PlaylistView from './PlaylistView'
+import Home from "./Home"
 import Search from "./Search"
 import Library from "./Library"
 import Artist from "./Artist"
 import Player from "./Player"
 
 function Spotify() {
-  const [view, setView] = useState("search")
+  const [view, setView] = useState("home")
   const [globalPlaylistId, setGlobalPlaylistId] = useState(null)
   const [globalArtistId, setGlobalArtistId] = useState(null)
   const [globalCurrentSongId, setGlobalCurrentSongId] = useState(null)
@@ -23,10 +24,14 @@ function Spotify() {
         />
          {view === "playlist" && <PlaylistView
             setView={setView}
-            setGlobalArtistId={setGlobalArtistId}
             globalPlaylistId={globalPlaylistId}
+          />}
+          {view === "home" && <Home 
+            setView={setView}
+            setGlobalPlaylistId={setGlobalPlaylistId}
             setGlobalCurrentSongId={setGlobalCurrentSongId}
             setGlobalIsTrackPlaying={setGlobalIsTrackPlaying}
+            setGlobalArtistId={setGlobalArtistId}
           />}
           {view === "search" && <Search
             setView={setView}

@@ -77,7 +77,6 @@ const SearchResults = ({ playlists, songs, artists, setView, setGlobalPlaylistId
                             </div>
                         })}
                     </div>
-
                 </div>
             </div>
             <div className='space-y-4'>

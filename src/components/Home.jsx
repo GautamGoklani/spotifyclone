@@ -2,7 +2,7 @@ import { PlayIcon } from '@heroicons/react/24/solid';
 import { useStateProvider } from '../utils/StateProvider';
 import React, { useEffect, useState } from 'react';
 
-const FeaturedPlaylists = ({ setView, setGlobalPlaylistId }) => {
+const Home = ({ setView, setGlobalPlaylistId }) => {
 
   const [{ token }] = useStateProvider();
   const [playlists, setPlaylists] = useState([])
@@ -15,7 +15,7 @@ const FeaturedPlaylists = ({ setView, setGlobalPlaylistId }) => {
   useEffect(() => {
     async function f() {
         const response = await fetch("https://api.spotify.com/v1/browse/featured-playlists?" + new URLSearchParams({
-          country: "US"
+          country: "IN"
         }), {
           headers: {
             Authorization: "Bearer " + token,
@@ -47,4 +47,4 @@ const FeaturedPlaylists = ({ setView, setGlobalPlaylistId }) => {
   );
 }
 
-export default FeaturedPlaylists;
+export default Home;
